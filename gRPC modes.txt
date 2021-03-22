@@ -1,0 +1,19 @@
+gRPC modes
+
+unary rpc:
+    - Client faz uma request para o servidor, espera a resposta (sincrono), 
+    o servidor faz um processamento (como ir em algum MS, etc) e devolve ao cliente.
+
+server Streaming rpc: 
+ - client faz uma request e o client espera (muitos) dados a serem retornados, 
+    não apenas uma response, uma stream de respostas. (youtube, twitch..), 
+    sempre que o servidor responde algo, um evento é disparado e então, você recebe os dados.
+    (similar ao websocket.)
+
+ client streaming rpc:
+    - O Client está enviando multiplas requests ou um grande arquivo para o servidor,
+    enviando multiplas streams, vários "pedaços" de dado.
+
+Biderectional streaming rpc:
+    - o client e o servidor está constantemente enviando e recebendo dados, como um chat,
+    jogos, etc.
